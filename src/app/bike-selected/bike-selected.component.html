@@ -1,0 +1,33 @@
+<div class="container">
+
+  <table border *ngIf="selectedBikes.length > 0">
+
+    <tr > 
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Type</th>
+        <th>Displacement</th>
+        <th>Engine</th>
+        <th>Power</th>
+        <th>Torque</th>
+        <th>Compression</th>
+    </tr>
+
+    <tr *ngFor="let bike of selectedBikes">
+        <th>{{bike.make || 'no found data'}}</th>
+        <th>{{bike.model || 'no found data'}}</th>
+        <th>{{bike.year || 'no found data'}}</th>
+        <th>{{bike.type || 'no found data'}}</th>
+        <th>{{bike.displacement || 'no found data'}}</th>
+        <th>{{bike.engine || 'no found data'}}</th>
+        <th>{{bike.power || 'no found data'}}</th>
+        <th>{{bike.torque || 'no found data'}}</th>
+        <th>{{bike.compression || 'no found data'}}</th> 
+
+        <button (click)="deleteBike(bike)">Delete</button>
+    </tr>
+   
+  </table>
+
+</div>

@@ -1,16 +1,28 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { ListBikesComponent } from './list-bikes/list-bikes.component';
+import { BikeSelectedComponent } from './bike-selected/bike-selected.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    ListBikesComponent,
+    BikeSelectedComponent,
+    HeaderComponent
+    
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [ListBikesComponent, HeaderComponent]
 })
-export class AppModule { }
+
+
+export class AppModule {
+
+
+
+}

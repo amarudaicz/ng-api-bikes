@@ -1,0 +1,46 @@
+<div class="container-list-component">
+    <div class="container-inputs">
+      <input type="text" [(ngModel)]="bikeMake" #make />
+      {{ bikeMake }}
+      <input type="text"  [(ngModel)]="bikeModel" #model />
+      {{ model.value }}
+
+      <button (click)="getData(bikeMake, bikeModel)">Search</button>
+    </div>
+    
+  
+    <div *ngIf="listMotorbikes.length !== 0; else noMotorbikeFind" class="container-list-bikes">
+      <ul>
+
+        <li *ngFor="let bike of listMotorbikes; let i = index" class="li-item-bike">
+  
+          {{ bike.model }}
+  
+          <input
+            type="button"
+            value="Select"
+            class="btn-select-bike"
+            (click)="onSelectBikeOne(bike)"
+          />
+  
+        </li>
+
+      </ul>
+
+    </div>
+
+    <ng-template #noMotorbikeFind>
+      <h2 class="alert-no-results">No se han encontrado resultados</h2>
+    </ng-template>
+
+
+    <br />
+    <br />
+
+
+    <app-bike-selected (newSelectedBikes)="updateList($event)" class="container-selected-bikes" [bikeInfo]="bikeInfo" [selectedBikes]="selectedBikes"></app-bike-selected>
+
+
+
+  </div>
+  
